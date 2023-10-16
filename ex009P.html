@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é Brasileiro ou estrangeiro?</title>
+</head>
+<body>
+    <h1>Você é Brasileiro ou Estrangeiro ?</h1>
+    <style>
+        body{
+            background-color: rgb(160, 155, 216);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+    <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="diferenciar()" id ="button">
+    <div id="res"><p>Resultado:</p></div>
+    
+    <script>
+        function diferenciar() {
+            var país = document.querySelector('input#txtpais') // essa var recebe país digitado no input
+            var res = document.querySelector('div#res')
+            var país = (país.value).toUpperCase()
+            if (país != 'BRASIL') {
+                res.innerHTML = `Se o seu País de origem é <strong>${país.toUpperCase()}</strong>, Você é Estrangeiro!` 
+            }
+            else {
+                res.innerHTML = `Você nasceu no <strong>${país.toUpperCase()}</strong>, parabéns! Você é Brasileiro!`
+            }
+        }
+    </script>
+</body>
+</html>
